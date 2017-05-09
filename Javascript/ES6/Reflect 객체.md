@@ -17,6 +17,12 @@
 
 
 
+1. [Reflect.apply(function, this, args)](Reflect.apply(function, this, args))
+2. [Reflect.construct(constructor, args, prototype)](Reflect.construct(constructor, args, prototype))
+3. [Reflect.defineProperty(object, property, descriptor)](Reflect.defineProperty(object, property, descriptor))
+
+
+
 ## Reflect.apply(function, this, args)
 
 -  주어진 this 값으로 target 함수를 호출하는 메소드
@@ -31,12 +37,35 @@
 
 
 2. this - target function 내부의 this 값
-
 3. args - target 함수의 인자를 지정한 배열 객체
 
-   ​
+
+
+# 예제
+
+```javascript
+function function_name(a,b,c){
+  return this.value + a + b + c;
+}
+
+var returned_value = Reflect.apply(function_name, {value: 100}, [10,20,30]);
+
+console.log(returned_value); // 160
+```
+
+
+
+>  Reflect.apply( function_name, {value: 100}, [10,20,30]);
+>
+>  function_name 함수의 this값으로 {value:100}전달 그리고 지정한 배열객체[10,20,30]을 인자값으로 넣음
+
+
+
+## Reflect.construct(constructor, args, prototype)
 
 
 
 
+
+## Reflect.defineProperty(object, property, descriptor)
 
