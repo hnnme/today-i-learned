@@ -1,2 +1,2 @@
 # today-i-learned
-upload I learned today
+upload I learned today -
